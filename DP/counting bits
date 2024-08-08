@@ -1,0 +1,31 @@
+class Solution {
+public:
+//   int solve(int i, vector<int>& dp){
+    // //memo
+    //     if (i == 0) return 0;
+    //     if(dp[i]!= -1) return dp[i];
+    //   dp[i] = solve(i >> 1, dp) + (i & 1);
+    //     return dp[i];
+        
+    // }
+
+    vector<int> countBits(int n) {
+    //     vector<int>dp(n+1, -1);
+    //     vector<int> ans(n + 1); 
+    //     for (int i = 0; i <= n; ++i) {
+    //         ans[i] = solve(i, dp);
+    //     }
+    //      return ans;
+
+    //Tabultaion
+    vector<int>dp(n+1);
+    for(int i =0; i<=n; i++){
+        dp[i] = dp[i/2] + (i&1);
+
+    }
+    return dp;
+       
+    }
+    
+  
+};
